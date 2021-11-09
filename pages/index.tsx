@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { getPosts } from "../services/";
-import PostCard from "../components/Post/PostCard";
+import PostCard from "../components/PostCard";
 
 import PostWidget from "../components/PostWidget";
 import Categories from "../components/Categories";
@@ -18,7 +18,7 @@ export default function Home({ posts }) {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         <div className="lg:col-span-8 col-span-1">
           {posts.map((post: any) => (
-            <PostCard key={post.node.title} post={post.node} />
+            <PostCard key={post.title} post={post} />
           ))}
         </div>
         <div className="lg:col-span-4 col-span-1">
