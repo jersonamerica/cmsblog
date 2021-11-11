@@ -3,6 +3,7 @@ export type Author = {
   photo: {
     url: string;
   };
+  bio: string;
 };
 
 export type Category = {
@@ -20,5 +21,16 @@ export type Post = {
   };
   author: Author;
   categories: Category;
-  content: any;
+  content: {
+    raw: {
+      children: Array<Record<string, any>>;
+    };
+  };
+};
+
+export type Comment = {
+  name: string;
+  email: string;
+  createdAt: string;
+  comment: string;
 };
