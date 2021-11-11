@@ -1,6 +1,6 @@
 import React, { FC, useState, useEffect } from "react";
 import moment from "moment";
-import Link from "next/Link";
+import Link from "next/link";
 
 import { Post, Category } from "./types";
 

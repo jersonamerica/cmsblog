@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { Post } from "./types";
-import Link from "next/Link";
+import Link from "next/link";
 import moment from "moment";
 
 const PostCard: FC<{ post: Post }> = ({ post }) => {
