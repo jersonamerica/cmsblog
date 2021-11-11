@@ -12,7 +12,7 @@ const Comments: FC<Props> = ({ slug }) => {
 
   useEffect(() => {
     getComments(slug).then((result) => setComments(result));
-  }, []);
+  }, [slug]);
   return (
     <>
       {comments.length > 0 && (

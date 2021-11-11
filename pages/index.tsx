@@ -4,8 +4,7 @@ import PostCard from "../components/PostCard";
 
 import PostWidget from "../components/PostWidget";
 import Categories from "../components/Categories";
-
-// import Content from "../components/Content";
+// import FeaturedPosts from "../section/FeaturedPosts";
 
 export default function Home({ posts }) {
   return (
@@ -14,7 +13,7 @@ export default function Home({ posts }) {
         <title>CMS Blog</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* <Posts posts={posts} /> */}
+      {/* <FeaturedPosts /> */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         <div className="lg:col-span-8 col-span-1">
           {posts.map((post: any) => (
@@ -28,7 +27,6 @@ export default function Home({ posts }) {
           </div>
         </div>
       </div>
-      {/* <Content /> */}
     </div>
   );
 }
