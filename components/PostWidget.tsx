@@ -2,9 +2,9 @@ import React, { FC, useState, useEffect } from "react";
 import moment from "moment";
 import Link from "next/link";
 
-import { Post, Category } from "./types";
+import { Post, Category } from "components/types";
 
-import { getRecentPosts, getSimilarPosts } from "../services";
+import { getRecentPosts, getSimilarPosts } from "services";
 
 type Props = {
   slug?: Pick<Post, "slug">;

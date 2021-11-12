@@ -1,6 +1,6 @@
 import React, { FC, ReactElement } from "react";
 import moment from "moment";
-import { Post } from "./types";
+import { Post } from "components/types";
 
 type Props = {
   post: Post;

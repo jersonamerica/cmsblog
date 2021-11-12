@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Author } from "./types";
+import { Author } from "components/types";
 import Image from "next/image";
 
 type Props = {

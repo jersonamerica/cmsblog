@@ -1,7 +1,7 @@
 import React, { FC, useState, useEffect } from "react";
-import { Comment } from "./types";
+import { Comment } from "components/types";
 
-import { getComments } from "../services";
+import { getComments } from "services";
 import moment from "moment";
 
 type Props = {

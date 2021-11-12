@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Post } from "./types";
+import { Post } from "components/types";
 import Link from "next/link";
 import moment from "moment";
 

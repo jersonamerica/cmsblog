@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
-import { Post } from "../components/types";
-import { getFeaturedPosts } from "../services";
+import { Post } from "components/types";
+import { getFeaturedPosts } from "services";
 
-import CarouselItem from "./CarouselItem";
+import CarouselItem from "section/CarouselItem";
 
 const responsive = {
   desktop: {

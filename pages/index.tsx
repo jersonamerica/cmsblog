@@ -1,12 +1,13 @@
 import Head from "next/head";
-import { getPosts } from "../services/";
-import PostCard from "../components/PostCard";
+import { getPosts } from "services";
+import PostCard from "components/PostCard";
 
-import PostWidget from "../components/PostWidget";
-import Categories from "../components/Categories";
+import PostWidget from "components/PostWidget";
+import Categories from "components/Categories";
+import { Post } from "components/types";
 // import FeaturedPosts from "../section/FeaturedPosts";
 
-export default function Home({ posts }) {
+export default function Home(props: { posts: Array<Post> }) {
   return (
     <div className="container mx-auto px-10 mb-8">
       <Head>
@@ -16,7 +17,7 @@ export default function Home({ posts }) {
       {/* <FeaturedPosts /> */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         <div className="lg:col-span-8 col-span-1">
-          {posts.map((post: any) => (
+          {props.posts.map((post: Post) => (
             <PostCard key={post.title} post={post} />
           ))}
         </div>

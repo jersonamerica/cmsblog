@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "baseUrl": "./pages",
+    "baseUrl": "./",
     "jsx": "preserve",
     "module": "esnext",
     "moduleResolution": "node",
@@ -27,9 +27,7 @@
     "esModuleInterop": true,
     "isolatedModules": true
   },
-  "include": [
-    "components/*"
-, "components/**/*"  ],
+  "include": ["components/*", "section/*", "pages/*"],
   "exclude": [
     "node_modules"
   ]
