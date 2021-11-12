@@ -1,61 +1,62 @@
-import React from "react";
-import { useRouter } from "next/router";
+import React from 'react';
+import { useRouter } from 'next/router';
 
-import { getPosts, getPostDetails } from "../../services";
+import { getPosts, getPostDetails } from 'services';
 
-import Categories from "../../components/Categories";
-import PostWidget from "../../components/PostWidget";
-import PostDetail from "../../components/PostDetail";
-import Author from "../../components/Author";
-import CommentsForm from "../../components/CommentsForm";
-import Comments from "../../components/Comments";
-import Loader from "../../components/Loader";
+import Categories from 'components/Categories';
+import PostWidget from 'components/PostWidget';
+import PostDetail from 'components/PostDetail';
+import Author from 'components/Author';
+import CommentsForm from 'components/CommentsForm';
+import Comments from 'components/Comments';
+import Loader from 'components/Loader';
+import { Post } from 'components/types';
 
-const PostDetails = ({ post }) => {
-  const router = useRouter();
+const PostDetails = ({ post }: Record<string, Post>) => {
+	const router = useRouter();
 
-  if (router.isFallback) {
-    return <Loader />;
-  }
+	if (router.isFallback) {
+		return <Loader />;
+	}
 
-  return (
-    <div className="container mx-auto px-10 mb-8">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-        <div className="col-span-1 lg:col-span-8">
-          <PostDetail post={post} />
-          <Author author={post.author} />
-          <CommentsForm slug={post.slug} />
-          <Comments slug={post.slug} />
-        </div>
-        <div className="col-span-1 lg:col-span-4">
-          <div className="relative lg:sticky lg:top-8">
-            <PostWidget
-              slug={post.slug}
-              categories={post.categories.map((category) => category.slug)}
-            />
-            <Categories />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+	return (
+		<div className="container mx-auto px-10 mb-8">
+			<div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+				<div className="col-span-1 lg:col-span-8">
+					<PostDetail post={post} />
+					<Author author={post.author} />
+					<CommentsForm slug={post.slug} />
+					<Comments slug={post.slug} />
+				</div>
+				<div className="col-span-1 lg:col-span-4">
+					<div className="relative lg:sticky lg:top-8">
+						<PostWidget
+							slug={post.slug}
+							categories={post.categories.map((category) => category.slug)}
+						/>
+						<Categories />
+					</div>
+				</div>
+			</div>
+		</div>
+	);
 };
 
 export default PostDetails;
 
 export async function getStaticProps({ params }) {
-  const data = await getPostDetails(params.slug);
+	const data = await getPostDetails(params.slug);
 
-  return {
-    props: { post: data },
-  };
+	return {
+		props: { post: data },
+	};
 }
 
 export async function getStaticPaths() {
-  const posts = await getPosts();
+	const posts = await getPosts();
 
-  return {
-    paths: posts.map(({ slug }) => ({ params: { slug } })),
-    fallback: true,
-  };
+	return {
+		paths: posts.map(({ slug }) => ({ params: { slug } })),
+		fallback: true,
+	};
 }

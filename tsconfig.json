@@ -27,7 +27,7 @@
     "esModuleInterop": true,
     "isolatedModules": true
   },
-  "include": ["components/*", "section/*", "pages/*"],
+  "include": ["components/*", "section/*", "pages/*", "pages/**/*"],
   "exclude": [
     "node_modules"
   ]
