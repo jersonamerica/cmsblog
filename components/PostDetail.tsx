@@ -8,7 +8,7 @@ type Props = {
 
 const PostDetail: FC<Props> = ({ post }) => {
 	const getContentFragment = (index: number, text: any, obj: any, type = '') => {
-		let modifiedText: ReactElement<any, any> & Array<ReactElement<any, any>> =
+		const modifiedText: ReactElement<any, any> & Array<ReactElement<any, any>> =
 			text;
 
 		if (obj) {
@@ -30,7 +30,7 @@ const PostDetail: FC<Props> = ({ post }) => {
 				return (
 					<h3 key={index} className="text-xl font-semibold mb-4">
 						{modifiedText.map((item) => (
-							<React.Fragment key={`${item.key}${item}`}>{item}</React.Fragment>
+							<React.Fragment key={`${item?.key}${item}`}>{item}</React.Fragment>
 						))}
 					</h3>
 				);
@@ -38,7 +38,7 @@ const PostDetail: FC<Props> = ({ post }) => {
 				return (
 					<p key={index} className="mb-8">
 						{modifiedText.map((item) => (
-							<React.Fragment key={`${item.key}${item}`}>{item}</React.Fragment>
+							<React.Fragment key={`${item?.key}${item}`}>{item}</React.Fragment>
 						))}
 					</p>
 				);
@@ -46,7 +46,7 @@ const PostDetail: FC<Props> = ({ post }) => {
 				return (
 					<h4 key={index} className="text-md font-semibold mb-4">
 						{modifiedText.map((item) => (
-							<React.Fragment key={`${item.key}${item}`}>{item}</React.Fragment>
+							<React.Fragment key={`${item?.key}${item}`}>{item}</React.Fragment>
 						))}
 					</h4>
 				);

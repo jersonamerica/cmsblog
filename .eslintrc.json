@@ -37,6 +37,9 @@
         "react/function-component-definition": "off",
         "import/no-unresolved": "off",
         "react/require-default-props": "off",
-        "react/jsx-props-no-spreading": "off"
+        "react/jsx-props-no-spreading": "off",
+        "no-use-before-define": "off",
+        "@typescript-eslint/no-use-before-define": ["error"],
+        "no-const-assign": "off"
     }
 }
