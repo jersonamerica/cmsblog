@@ -44,7 +44,7 @@ const PostDetails = ({ post }: Record<string, Post>) => {
 
 export default PostDetails;
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params }: Record<string, Post>) {
 	const data = await getPostDetails(params.slug);
 
 	return {
@@ -53,7 +53,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-	const posts = await getPosts();
+	const posts: Array<Post> = await getPosts();
 
 	return {
 		paths: posts.map(({ slug }) => ({ params: { slug } })),
